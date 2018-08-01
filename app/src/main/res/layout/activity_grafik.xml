@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context=".GrafikActivity">
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="275dp" />
+
+    <com.github.mikephil.charting.charts.ScatterChart
+        android:id="@+id/scater"
+        android:layout_below="@id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"/>
+
+</RelativeLayout>

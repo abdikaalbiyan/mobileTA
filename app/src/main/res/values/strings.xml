@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Konflik GIS</string>
+    <string name="title_activity_heatmap">Map</string>
+</resources>

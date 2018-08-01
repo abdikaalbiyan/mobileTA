@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBase"
+    android:orientation="vertical"
+    tools:context=".TambahFormActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tambah_form_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryD2"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lokasi Kejadian"
+            android:textColor="@color/colorPrimaryL3"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/jenis_kriminalitas_tambah_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tanggal Kejadian"
+            android:textColor="@color/colorPrimaryL3"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tanggal_input_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="10dp"
+            android:text="1 Januari 2018"
+            android:textAlignment="center"
+            android:textColor="@color/colorBase"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/kirim_laporan_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/roundedbutton"
+            android:text="Kirim Laporan" />
+
+    </LinearLayout>
+
+</LinearLayout>
