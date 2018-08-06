@@ -35,7 +35,7 @@
             android:textSize="14sp" />
 
         <Spinner
-            android:id="@+id/jenis_kriminalitas_tambah_sp"
+            android:id="@+id/jenis_kriminalitas_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp" />
@@ -44,23 +44,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Tanggal Kejadian"
+            android:text="Input Kejadian"
             android:textColor="@color/colorPrimaryL3"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tanggal_input_tv"
+        <EditText
+            android:id="@+id/edtKejadian"
+            android:hint="Input Kejadian    "
+            android:inputType="number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:padding="10dp"
-            android:text="1 Januari 2018"
-            android:textAlignment="center"
-            android:textColor="@color/colorBase"
-            android:textSize="36sp" />
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/kirim_laporan_btn"
+            android:id="@+id/btn_kirim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

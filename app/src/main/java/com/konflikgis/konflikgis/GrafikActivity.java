@@ -15,7 +15,9 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.ScatterData;
 import com.github.mikephil.charting.data.ScatterDataSet;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.konflikgis.konflikgis.Model.KejadianBody;
 import com.konflikgis.konflikgis.Rest.ApiService;
@@ -33,6 +35,7 @@ public class GrafikActivity extends AppCompatActivity {
 
     Context mContext;
     ApiService mApiService;
+    private ArrayList<String> xAxis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,19 @@ public class GrafikActivity extends AppCompatActivity {
         chart.animateXY(2000, 2000);
         chart.invalidate();
 
-         scatterChart = (ScatterChart) findViewById(R.id.scater);
+        scatterChart = (ScatterChart) findViewById(R.id.scater);
+        scatterChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+                Log.d("onValueSelected: " , dataSetIndex + "");
+                Toast.makeText(mContext, xAxis.get(e.getXIndex())  + " : " + e.getVal(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
 
         //scaterChart();
         getScatterPlot();
@@ -69,8 +84,8 @@ public class GrafikActivity extends AppCompatActivity {
                             ArrayList<String> labels = new ArrayList<String>();
 
                             for (int i =0; i < list.size(); i++){
-                                String zetKejadian = list.get(i).getZetKejadian();
-                                String bobotZKejadian = list.get(i).getBobotZKejadian();
+                                String zetKejadian = list.get(i).getZet2018();
+                                String bobotZKejadian = list.get(i).getBobotZ2018();
 
                                 Log.d("zKejadian", zetKejadian);
 
@@ -200,7 +215,7 @@ public class GrafikActivity extends AppCompatActivity {
     }
 
     private ArrayList<String> getXAxisValues() {
-        ArrayList<String> xAxis = new ArrayList<>();
+        xAxis = new ArrayList<>();
         xAxis.add("Benowo");
         xAxis.add("Pakal");
         xAxis.add("Sambikerep");
